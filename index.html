@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>💕 Happy Women's Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== PASSCODE SCREEN ===== -->
+    <div id="passcode-screen" class="screen active">
+      <div class="passcode-container">
+        <div class="avatar-wrapper">
+          <div class="avatar-ring"></div>
+          <div class="avatar-fallback">🌸</div>
+        </div>
+        <p class="passcode-label">Nhập mật khẩu để mở khóa 💕</p>
+        <div class="hearts-container">
+          <span class="heart" data-index="0">♡</span>
+          <span class="heart" data-index="1">♡</span>
+          <span class="heart" data-index="2">♡</span>
+          <span class="heart" data-index="3">♡</span>
+        </div>
+        <div class="numpad" id="numpad">
+          <button class="num-btn" data-num="1">1</button>
+          <button class="num-btn" data-num="2">2</button>
+          <button class="num-btn" data-num="3">3</button>
+          <button class="num-btn" data-num="4">4</button>
+          <button class="num-btn" data-num="5">5</button>
+          <button class="num-btn" data-num="6">6</button>
+          <button class="num-btn" data-num="7">7</button>
+          <button class="num-btn" data-num="8">8</button>
+          <button class="num-btn" data-num="9">9</button>
+          <button class="num-btn" data-num="❤️">❤️</button>
+          <button class="num-btn" data-num="0">0</button>
+          <button class="num-btn delete-btn" id="delete-btn">⌫</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== DASHBOARD ===== -->
+    <div id="dashboard" class="screen">
+      <div class="dashboard-container">
+        <div class="greeting">
+          <div class="greeting-emoji">🌸</div>
+          <h1>Happy Women's Day</h1>
+          <p class="greeting-date">8 / 3 / 2026</p>
+          <p class="greeting-sub">Chọn một món quà nhé!</p>
+        </div>
+        <div class="menu-grid">
+          <button class="menu-card" data-modal="music-modal">
+            <span class="menu-icon">🎵</span>
+            <span class="menu-label">Music</span>
+          </button>
+          <button class="menu-card" data-modal="letter-modal">
+            <span class="menu-icon">💌</span>
+            <span class="menu-label">Letter</span>
+          </button>
+          <button class="menu-card" data-modal="gallery-modal">
+            <span class="menu-icon">📸</span>
+            <span class="menu-label">Gallery</span>
+          </button>
+          <button class="menu-card" data-modal="gift-modal">
+            <span class="menu-icon">🎁</span>
+            <span class="menu-label">Gift</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MUSIC MODAL ===== -->
+    <div id="music-modal" class="modal">
+      <div class="modal-content music-content">
+        <button class="modal-close" data-close="music-modal">✕</button>
+        <div class="vinyl-container">
+          <div class="vinyl-disc" id="vinyl-disc">
+            <div class="vinyl-grooves"></div>
+            <div class="vinyl-label">🎵</div>
+          </div>
+        </div>
+        <div class="song-info">
+          <h3 id="song-title">Chọn bài hát</h3>
+          <p id="song-artist">---</p>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="time-display">
+            <span id="current-time">0:00</span>
+            <span id="total-time">0:00</span>
+          </div>
+        </div>
+            <div class="music-controls">
+                <button class="ctrl-btn" id="prev-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="5" width="3" height="14" rx="1"/><path d="M21 5.5a1 1 0 0 0-1.5-.86l-9 5.5a1 1 0 0 0 0 1.72l9 5.5A1 1 0 0 0 21 16.5v-11z"/></svg>
+                </button>
+                <button class="ctrl-btn play-btn" id="play-btn">
+                    <svg class="icon-play" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z"/></svg>
+                    <svg class="icon-pause" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+                </button>
+                <button class="ctrl-btn" id="next-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="18" y="5" width="3" height="14" rx="1"/><path d="M3 5.5a1 1 0 0 1 1.5-.86l9 5.5a1 1 0 0 1 0 1.72l-9 5.5A1 1 0 0 1 3 16.5v-11z"/></svg>
+                </button>
+            </div>
+        <div class="playlist" id="playlist">
+          <h4>🎶 Playlist</h4>
+          <div class="playlist-items" id="playlist-items"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== LETTER MODAL ===== -->
+    <div id="letter-modal" class="modal">
+      <div class="modal-content letter-content">
+        <button class="modal-close" data-close="letter-modal">✕</button>
+        <div class="letter-paper">
+          <div class="letter-header">
+            <span class="sticker sticker-1">💐</span>
+            <span class="letter-title">Gửi các bạn nữ 💕</span>
+            <span class="sticker sticker-2">🦋</span>
+          </div>
+          <div class="letter-body" id="letter-body"></div>
+          <div class="letter-footer">
+            <span class="sticker sticker-3">🌷</span>
+            <span class="sticker sticker-4">💕</span>
+            <span class="sticker sticker-5">🌸</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== GALLERY MODAL ===== -->
+    <div id="gallery-modal" class="modal">
+      <div class="modal-content gallery-content">
+        <button class="modal-close" data-close="gallery-modal">✕</button>
+        <h3 class="modal-title">Bộ sưu tập ảnh 📸</h3>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </div>
+
+    <!-- ===== GIFT MODAL ===== -->
+    <div id="gift-modal" class="modal">
+      <div class="modal-content gift-content">
+        <button class="modal-close gift-close" data-close="gift-modal">
+          ✕
+        </button>
+        <div class="night-sky" id="night-sky">
+          <div class="stars" id="stars-container"></div>
+          <div class="plant-container" id="plant-container">
+            <div class="plant-pot">🪴</div>
+            <div class="plant-stem-wrap">
+              <div class="plant-stem"></div>
+              <div class="leaf leaf-1">🌿</div>
+              <div class="leaf leaf-2">🌿</div>
+              <div class="leaf leaf-3">🍃</div>
+            </div>
+            <div class="plant-flower">🌺</div>
+            <div class="plant-message">Happy Women's Day! 💕</div>
+          </div>
+          <div class="floating-messages" id="floating-messages"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div id="lightbox" class="lightbox">
+      <button class="lightbox-close" id="lightbox-close">✕</button>
+      <img id="lightbox-img" src="" alt="Full size photo" />
+    </div>
+
+    <audio id="audio-player" preload="auto"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
