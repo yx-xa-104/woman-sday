@@ -299,13 +299,14 @@ let giftInterval = null;
 let giftStarted = false;
 
 const GIFT_ITEMS = [
-  'Happy Women\'s Day 💕', '🌸', '💐', '🦋', '✨', '🌷', '💕', '🌺',
-  '🎀', '💖', '🌹', '🌻', '💝', '🌼', '🎉', '💗',
-  '🌈', '💫', '🧸', '🍀', '🪻', '🩷', '🫶', '💮',
-  'Luôn xinh đẹp!', 'Yêu ems!', '8/3 vui vẻ!',
-  'Hạnh phúc mãi!', 'Tỏa sáng nhé!', 'Em number 1!',
-  'Stay beautiful ✨', 'Luôn tự tin!', 'Yêu thương! 💕',
-  'Rạng rỡ nha!', 'Xinh xỉu! 🌸',
+  '🌸', 'Happy Women\'s Day 💕', '💐', 'Luôn xinh đẹp!',
+  '🦋', 'Yêu ems!', '✨', '8/3 vui vẻ!',
+  '🌷', 'Hạnh phúc mãi!', '💕', 'Tỏa sáng nhé!',
+  '🌺', 'Em number 1!', '🎀', 'Stay beautiful ✨',
+  '💖', 'Luôn tự tin!', '🌹', 'Yêu thương! 💕',
+  '🌻', 'Rạng rỡ nha!', '💝', 'Xinh xỉu! 🌸',
+  '🌼', '🎉', '💗', '🌈', '💫', '🧸',
+  '🍀', '🪻', '🩷', '🫶', '💮',
 ];
 
 function startGiftAnimation() {
