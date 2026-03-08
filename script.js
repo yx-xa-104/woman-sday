@@ -295,6 +295,9 @@ function closeLightbox() {
 // ==================
 // GIFT - NIGHT SKY
 // ==================
+let giftInterval = null;
+let giftStarted = false;
+
 const GIFT_ITEMS = [
   'Happy Women\'s Day 💕', '🌸', '💐', '🦋', '✨', '🌷', '💕', '🌺',
   '🎀', '💖', '🌹', '🌻', '💝', '🌼', '🎉', '💗',
@@ -324,45 +327,29 @@ function startGiftAnimation() {
     starsContainer.appendChild(star);
   }
 
-  // Auto floating messages
-  let autoIdx = 0;
-  const createAutoMsg = () => {
-    spawnFloatingItem(GIFT_ITEMS[autoIdx % GIFT_ITEMS.length]);
-    autoIdx++;
+  let msgIndex = 0;
+  const createMsg = () => {
+    const container = document.getElementById('floating-messages');
+    const content = GIFT_ITEMS[msgIndex % GIFT_ITEMS.length];
+    const isEmoji = content.length <= 2;
+    const msg = document.createElement('div');
+    msg.className = isEmoji ? 'floating-msg floating-emoji' : 'floating-msg';
+    msg.textContent = content;
+    msg.style.cssText = `
+      left: ${10 + Math.random() * 80}%;
+      --duration: ${5 + Math.random() * 5}s;
+      --drift: ${Math.random() * 60 - 30}px;
+      --rotate: ${Math.random() * 20 - 10}deg;
+    `;
+    container.appendChild(msg);
+    msgIndex++;
+    setTimeout(() => msg.remove(), 10000);
   };
 
   setTimeout(() => {
-    createAutoMsg();
-    giftInterval = setInterval(createAutoMsg, 1800);
+    createMsg();
+    giftInterval = setInterval(createMsg, 500);
   }, 3500);
-
-  // Click to spawn burst of items
-  const nightSky = document.getElementById('night-sky');
-  nightSky.addEventListener('click', onSkyClick);
-}
-
-function onSkyClick(e) {
-  const count = 3 + Math.floor(Math.random() * 3); // 3-5 items per click
-  for (let i = 0; i < count; i++) {
-    const item = GIFT_ITEMS[Math.floor(Math.random() * GIFT_ITEMS.length)];
-    setTimeout(() => spawnFloatingItem(item), i * 60);
-  }
-}
-
-function spawnFloatingItem(content, leftPercent) {
-  const container = document.getElementById('floating-messages');
-  const isEmoji = content.length <= 2;
-  const msg = document.createElement('div');
-  msg.className = isEmoji ? 'floating-msg floating-emoji' : 'floating-msg';
-  msg.textContent = content;
-  msg.style.cssText = `
-    left: ${leftPercent ?? (10 + Math.random() * 80)}%;
-    --duration: ${4 + Math.random() * 4}s;
-    --drift: ${Math.random() * 50 - 25}px;
-    --rotate: ${Math.random() * 20 - 10}deg;
-  `;
-  container.appendChild(msg);
-  setTimeout(() => msg.remove(), 9000);
 }
 
 function stopGiftAnimation() {
@@ -370,6 +357,4 @@ function stopGiftAnimation() {
     clearInterval(giftInterval);
     giftInterval = null;
   }
-  const nightSky = document.getElementById('night-sky');
-  nightSky.removeEventListener('click', onSkyClick);
 }
