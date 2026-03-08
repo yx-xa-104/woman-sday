@@ -302,11 +302,17 @@ const GIFT_ITEMS = [
   '🌸', 'Happy Women\'s Day 💕', '💐', 'Luôn xinh đẹp!',
   '🦋', 'Yêu ems!', '✨', '8/3 vui vẻ!',
   '🌷', 'Hạnh phúc mãi!', '💕', 'Tỏa sáng nhé!',
-  '🌺', 'Em number 1!', '🎀', 'Stay beautiful ✨',
+  '🌺', 'Ems number 1!', '🎀', 'Stay beautiful ✨',
   '💖', 'Luôn tự tin!', '🌹', 'Yêu thương! 💕',
   '🌻', 'Rạng rỡ nha!', '💝', 'Xinh xỉu! 🌸',
-  '🌼', '🎉', '💗', '🌈', '💫', '🧸',
-  '🍀', '🪻', '🩷', '🫶', '💮',
+  '🩷', 'Slay cả ngày!', '🫶', 'Chill & xinh!',
+  '💫', 'Vibe đẹp lắm!', '🧸', 'Giỏi giang quá!',
+  '🪻', 'Queen mà! 👑', '💮', 'Xứng đáng nhất!',
+  '�', 'Cứ tỏa sáng thôi!', '🎉', 'Ngày của ems nè!',
+  '💗', 'Iu nhiều lắm!', '�', 'May mắn luôn!',
+  '👑', 'Main character!', '�', 'Hot girl 8/3!',
+  '🥰', 'Đáng yêu ghê!', '💅', 'Tự tin lên nào!',
+  '�', 'Nhẹ nhàng mà tỏa sáng!', '🌟', 'Vạn điều tốt đẹp!',
 ];
 
 function startGiftAnimation() {
